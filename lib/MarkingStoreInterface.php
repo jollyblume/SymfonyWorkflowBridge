@@ -1,10 +1,10 @@
 <?php
 
-namespace JBJ\Workflow\MarkingStore;
+namespace JBJ\Workflow\SymfonyBridge;
 
-use JBJ\Workflow\MarkingStoreInterface as BaseInterface;
+use Symfony\Component\Workflow\MarkingStore\MarkingStoreInterface as BaseInterface;
 
-interface MarkingStoreInterface implements BaseInterface
+interface MarkingStoreInterface extends BaseInterface
 {
     /**
      * @return string $storeId

@@ -1,10 +1,11 @@
 <?php
 
-namespace JBJ\Workflow\MarkingStore;
+namespace JBJ\Workflow\SymfonyBridge;
 
-use Symfony\Component\Workflow\MarkingStore\MarkingStoreInterface;
 use Symfony\Component\Workflow\Marking;
-use JBJ\Workflow\MarkingStore\Transformer\MarkingToPlacesTransformer;
+use JBJ\Workflow\SymfonyBridge\Transformer\MarkingToPlacesTransformer;
+use JBJ\Workflow\SymfonyBridge\MarkingStoreInterface;
+use JBJ\Workflow\MarkingStore\MediatorInterface;
 use JBJ\Workflow\Traits\NameTrait;
 use JBJ\Workflow\Traits\PropertyAccessorTrait;
 use JBJ\Workflow\Exception\InvalidArgumentException;

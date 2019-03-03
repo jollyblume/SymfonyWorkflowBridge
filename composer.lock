@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53caf62d39eece40b94c3fd6f6b50dcc",
+    "content-hash": "56d52f902448d18a586ecef88b9b11a9",
     "packages": [
         {
             "name": "clue/graph",
@@ -142,6 +142,49 @@
                 "graphviz"
             ],
             "time": "2015-03-08T10:30:28+00:00"
+        },
+        {
+            "name": "jollyblume/marking-store",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jollyblume/MarkingStore.git",
+                "reference": "7cedfb51bf1aa04294b04e0cf8d5ed8b1abb1ded"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jollyblume/MarkingStore/zipball/7cedfb51bf1aa04294b04e0cf8d5ed8b1abb1ded",
+                "reference": "7cedfb51bf1aa04294b04e0cf8d5ed8b1abb1ded",
+                "shasum": ""
+            },
+            "require": {
+                "jollyblume/workflow-common": "@dev",
+                "moontoast/math": "^1.1",
+                "php": "^7.2",
+                "ramsey/uuid": "@dev"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5",
+                "psr/log": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JBJ\\Workflow\\MarkingStore\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jolly Blume",
+                    "email": "jollyblume2@gmail.com"
+                }
+            ],
+            "description": "symfony/workflow compliant multi-tenant marking store",
+            "time": "2019-03-03T20:23:02+00:00"
         },
         {
             "name": "jollyblume/workflow-common",
@@ -377,16 +420,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "bd09ad265cd50b2b9d09d65ce6aba2d29bc81fe1"
+                "reference": "3354d2e6af986dd71f68b4e5cf4a933ab58697fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/bd09ad265cd50b2b9d09d65ce6aba2d29bc81fe1",
-                "reference": "bd09ad265cd50b2b9d09d65ce6aba2d29bc81fe1",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/3354d2e6af986dd71f68b4e5cf4a933ab58697fb",
+                "reference": "3354d2e6af986dd71f68b4e5cf4a933ab58697fb",
                 "shasum": ""
             },
             "require": {
@@ -437,11 +480,11 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-16T20:35:37+00:00"
+            "time": "2019-02-23T15:17:42+00:00"
         },
         {
             "name": "symfony/inflector",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/inflector.git",
@@ -557,16 +600,16 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "4768734a803c4471b7a733bd13698d91dd0cf193"
+                "reference": "d5e10532c51db0b657b1e25b2bd70acbcd13bbf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/4768734a803c4471b7a733bd13698d91dd0cf193",
-                "reference": "4768734a803c4471b7a733bd13698d91dd0cf193",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/d5e10532c51db0b657b1e25b2bd70acbcd13bbf9",
+                "reference": "d5e10532c51db0b657b1e25b2bd70acbcd13bbf9",
                 "shasum": ""
             },
             "require": {
@@ -620,20 +663,20 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2019-01-16T20:31:39+00:00"
+            "time": "2019-02-23T15:17:42+00:00"
         },
         {
             "name": "symfony/workflow",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/workflow.git",
-                "reference": "ef0571ac233707f2d137f8d33d74533699452c72"
+                "reference": "0b7030acb8d5b9591516854133ea503a5cfca0f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/workflow/zipball/ef0571ac233707f2d137f8d33d74533699452c72",
-                "reference": "ef0571ac233707f2d137f8d33d74533699452c72",
+                "url": "https://api.github.com/repos/symfony/workflow/zipball/0b7030acb8d5b9591516854133ea503a5cfca0f4",
+                "reference": "0b7030acb8d5b9591516854133ea503a5cfca0f4",
                 "shasum": ""
             },
             "require": {
@@ -687,7 +730,7 @@
                 "transition",
                 "workflow"
             ],
-            "time": "2019-01-16T20:35:37+00:00"
+            "time": "2019-02-23T15:17:42+00:00"
         }
     ],
     "packages-dev": [
@@ -2199,6 +2242,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "jollyblume/marking-store": 20,
         "jollyblume/workflow-common": 20,
         "ramsey/uuid": 20
     },

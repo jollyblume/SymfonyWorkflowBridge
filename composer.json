@@ -1,6 +1,6 @@
 {
-    "name": "jollyblume/marking-store",
-    "description": "symfony/workflow compliant multi-tenant marking store",
+    "name": "jollyblume/symfony-workflow-bridge",
+    "description": "symfony/workflow bridge for jollyblume/workflow components",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,9 @@
     ],
     "require": {
         "php": "^7.2",
+        "jollyblume/marking-store": "@dev",
         "jollyblume/workflow-common": "@dev",
+        "moontoast/math": "^1.1",
         "ramsey/uuid": "@dev",
         "symfony/workflow": "^4.2"
     },
@@ -27,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "JBJ\\Workflow\\MarkingStore\\": "lib"
+            "JBJ\\Workflow\\SymfonyBridge\\": "lib"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JBJ\\Workflow\\MarkingStore\\Tests\\": "tests"
+            "JBJ\\Workflow\\Tests\\SymfonyBridge\\": "tests"
         }
     }
 }

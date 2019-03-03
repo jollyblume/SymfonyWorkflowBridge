@@ -1,6 +1,6 @@
 <?php
 
-namespace JBJ\Workflow\MarkingStore\Tests;
+namespace JBJ\Workflow\Tests\SymfonyBridge;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;
@@ -11,7 +11,7 @@ use Ramsey\Uuid\Validator\Validator as UuidValidator;
 use JBJ\Workflow\MarkingStore\EventListener\InMemoryMarkingsListener;
 use JBJ\Workflow\MarkingStore\InMemoryMarkings;
 use JBJ\Workflow\MarkingStore\Mediator\DispatchingMediator;
-use JBJ\Workflow\MarkingStore\Shim;
+use JBJ\Workflow\SymfonyBridge\Shim;
 use PHPUnit\Framework\TestCase;
 
 class ShimTest extends TestCase
