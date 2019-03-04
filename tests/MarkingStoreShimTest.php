@@ -11,27 +11,27 @@ use Ramsey\Uuid\Validator\Validator as UuidValidator;
 use JBJ\Workflow\MarkingStore\EventListener\InMemoryMarkingsListener;
 use JBJ\Workflow\MarkingStore\InMemoryMarkings;
 use JBJ\Workflow\MarkingStore\Mediator\DispatchingMediator;
-use JBJ\Workflow\SymfonyBridge\Shim;
+use JBJ\Workflow\SymfonyBridge\MarkingStoreShim;
 use PHPUnit\Framework\TestCase;
 
-class ShimTest extends TestCase
+class MarkingStoreShimTest extends TestCase
 {
     public function testDefaults()
     {
         $mediator = new DispatchingMediator('test.mediator', 'test-property');
         $mediator->setDispatcher(new EventDispatcher());
-        $shim = new Shim($mediator);
+        $shim = new MarkingStoreShim($mediator);
         $validator = new UuidValidator();
         $this->assertTrue($validator->validate($shim->getName()));
         $this->assertInstanceOf(PropertyAccessorInterface::class, $shim->getPropertyAccessor());
         $this->assertEquals($mediator->getDefaultProperty(), $shim->getProperty());
     }
 
-    public function testDefaultsWithPropertySeAtShim()
+    public function testDefaultsWithPropertySeAtMarkingStoreShim()
     {
         $mediator = new DispatchingMediator('test.mediator', 'masked-property');
         $mediator->setDispatcher(new EventDispatcher());
-        $shim = new Shim($mediator, 'test.shim', 'test-property');
+        $shim = new MarkingStoreShim($mediator, 'test.shim', 'test-property');
         $this->assertEquals('test.shim', $shim->getName());
         $this->assertEquals('test-property', $shim->getProperty());
     }
@@ -40,7 +40,7 @@ class ShimTest extends TestCase
     public function testNoDispatcherSetOnMediatorThrows()
     {
         $mediator = new DispatchingMediator('test.mediator');
-        new Shim($mediator);
+        new MarkingStoreShim($mediator);
     }
 
     protected function createSubject()
@@ -88,7 +88,7 @@ class ShimTest extends TestCase
     {
         $mediator = new DispatchingMediator('test.mediator', 'testProperty');
         $mediator->setDispatcher(new EventDispatcher());
-        $shim = new Shim($mediator);
+        $shim = new MarkingStoreShim($mediator);
         $subject = $this->createSubject();
         $marking = $shim->getMarking($subject);
         $this->assertInstanceOf(Marking::class, $marking);
@@ -101,7 +101,7 @@ class ShimTest extends TestCase
     {
         $mediator = new DispatchingMediator('test.mediator', 'testProperty');
         $mediator->setDispatcher(new EventDispatcher());
-        $shim = new Shim($mediator);
+        $shim = new MarkingStoreShim($mediator);
         $subject = [];
         $shim->getMarking($subject);
     }
@@ -111,7 +111,7 @@ class ShimTest extends TestCase
     {
         $mediator = new DispatchingMediator('test.mediator', 'testProperty');
         $mediator->setDispatcher(new EventDispatcher());
-        $shim = new Shim($mediator);
+        $shim = new MarkingStoreShim($mediator);
         $subject = $this->createBrokenSubject();
         $shim->getMarking($subject);
     }
@@ -121,7 +121,7 @@ class ShimTest extends TestCase
     {
         $mediator = new DispatchingMediator('test.mediator', 'testProperty');
         $mediator->setDispatcher(new EventDispatcher());
-        $shim = new Shim($mediator);
+        $shim = new MarkingStoreShim($mediator);
         $subject = $this->createReadOnlySubject();
         $shim->getMarking($subject);
     }
@@ -130,7 +130,7 @@ class ShimTest extends TestCase
     {
         $mediator = new DispatchingMediator('test.mediator', 'testProperty');
         $mediator->setDispatcher(new EventDispatcher());
-        $shim = new Shim($mediator);
+        $shim = new MarkingStoreShim($mediator);
         $subject = $this->createReadOnlySubject('be0daef6-5737-48f4-b3ad-9bd032637e2b');
         $marking = $shim->getMarking($subject);
         $this->assertEquals([], $marking->getPlaces());
@@ -174,7 +174,7 @@ class ShimTest extends TestCase
         $storeDispatcher = new InMemoryMarkingsListener($logger, $store);
         $dispatcher->addSubscriber($storeDispatcher);
         $mediator->setDispatcher($dispatcher);
-        $shim = new Shim($mediator);
+        $shim = new MarkingStoreShim($mediator);
         $subject = $this->createSubject();
         $this->assertNull($subject->getTestProperty());
         $expectedMarking = new Marking(['home' => 1, 'away' => 1]);

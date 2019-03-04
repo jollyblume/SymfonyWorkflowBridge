@@ -11,7 +11,7 @@ use JBJ\Workflow\Traits\PropertyAccessorTrait;
 use JBJ\Workflow\Exception\InvalidArgumentException;
 use JBJ\Workflow\Exception\DomainException;
 
-class Shim implements MarkingStoreInterface
+class MarkingStoreShim implements MarkingStoreInterface
 {
     use NameTrait, PropertyAccessorTrait {
         setPropertyAccessor as protected;
